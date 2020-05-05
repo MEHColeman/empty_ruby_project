@@ -1,0 +1,40 @@
+#!/bin/sh
+
+# Exit if any subcommand fails
+set -e
+
+# Create new, blank README template
+mv README.md.template README.md
+
+# replace this project .gitignore file for the one you want
+mv gitignore.dotfile .gitignore
+
+# Set up Ruby dependencies
+bundle install
+
+# Create RSpec framework
+bundle exec rspec --init
+
+cat << EOF > /tmp/newfile.rb
+begin
+require 'simplecov'
+  SimpleCov.start
+rescue LoadError
+  # simplecov not installed. That's OK.
+end
+EOF
+cat spec/spec_helper.rb >>  /tmp/newfile.rb
+mv /tmp/newfile.rb spec/spec_helper.rb
+
+# Create Guard install
+bundle exec guard init
+bundle exec guard init rspec
+
+#Tidy up generated code
+rubocop --auto-correct . || true
+
+# Replace this project's git with a new, clean repo
+rm -rf ./.git
+git init
+git add .
+git commit -am 'Initial commit'

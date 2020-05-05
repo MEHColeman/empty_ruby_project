@@ -1,0 +1,7 @@
+Gemfile.lock
+Guardfile
+
+spec/spec_helper.rb
+.rspec
+
+tmp/
