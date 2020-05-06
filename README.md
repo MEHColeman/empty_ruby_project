@@ -14,8 +14,20 @@ This will:
   * Configure some stuff
   * Run some code generators to set up a default testing framework
   * Tidy up the generated code
+  * Replace this README with a new template for your new project.
   * Create a new, clean git repository with a single initial commit of your new
     files.
+
+## Make tasks
+There are some commands set up in a Makefile to run various code quality
+checks. They are not Rakefile tasks because they generally don't need the rails
+environment to run, and in some cases that would be a bad thing.
+
+Makefile contains:
+make secure    # run bundle audit to check for known vulnerabilities
+make quality   # run rubycritic and simplecov
+make fast      # run fasterer
+make all       # all of the above
 
 ## License
 
