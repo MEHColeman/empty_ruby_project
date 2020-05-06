@@ -10,3 +10,6 @@ quality:
 .PHONY: fast
 fast:
 	fasterer
+
+.PHONY: all
+all: secure quality fast
