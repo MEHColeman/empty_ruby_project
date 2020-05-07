@@ -3,11 +3,11 @@
 This project is a template for creating a plain ruby (non-rails) project with
 some useful defaults.
 
-Clone this project into your desired directory and run `bin/setup`
+Clone this project into your desired directory and run `bin/create`
 ~~~
 ~/projects>hub clone MEHColeman/empty_ruby_project new_thing
 ~/projects>cd new_thing
-~/projects/new_thing>bin/setup
+~/projects/new_thing>bin/create
 ~~~
 
 This will:
