@@ -20,14 +20,13 @@ This will:
 
 ## Make tasks
 There are some commands set up in a Makefile to run various code quality
-checks. They are not Rakefile tasks because they generally don't need the rails
-environment to run, and in some cases that would be a bad thing.
-
-Makefile contains:
+checks:
+~~~
 make secure    # run bundle audit to check for known vulnerabilities
 make quality   # run rubycritic and simplecov
 make fast      # run fasterer
 make all       # all of the above
+~~~
 
 ## License
 
