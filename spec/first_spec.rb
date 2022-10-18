@@ -4,7 +4,7 @@ module NewProject
   RSpec.describe NewClass, '#instance_method' do
     context 'with a particlar predicate' do
       it 'does a thing to be tested' do
-        assert true
+        expect true
       end
     end
   end
