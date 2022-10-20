@@ -15,7 +15,9 @@ bundle install
 # Create RSpec framework
 bundle exec rspec --init
 
+# Insert SimpleCov after the frozen string literal comment
 cat << EOF > /tmp/newfile.rb
+
 begin
 require 'simplecov'
   SimpleCov.start
@@ -23,8 +25,12 @@ rescue LoadError
   # simplecov not installed. That's OK.
 end
 EOF
-cat spec/spec_helper.rb >>  /tmp/newfile.rb
-mv /tmp/newfile.rb spec/spec_helper.rb
+
+line=1
+ed -s spec/spec_helper.rb <<EOF
+${line}r /temp/newfile.rb
+w
+EOF
 
 # Create Guard install
 bundle exec guard init
