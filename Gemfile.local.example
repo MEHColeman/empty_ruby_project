@@ -8,6 +8,7 @@ group :development do
   gem 'guard-rspec', require: false
   gem 'pry'
   gem 'pry-byebug'
+  gem 'byebug'
   gem 'fasterer'
 
   # I generally already have these gem installed
