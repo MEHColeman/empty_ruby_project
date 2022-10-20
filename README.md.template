@@ -5,6 +5,9 @@ Welcome to your new ruby project!
 TODO: Delete this and describe your project.
 TODO: Rename lib/empty_ruby_project
 TODO: Delete bin/setup
+TODO: If using guard, add 'watch(/^lib\/log_check\/(.+)\.rb/) { |m| "spec/#{m[1]}_spec.rb" }`
+
+in an appropriate place.
 
 ## Installation
 
