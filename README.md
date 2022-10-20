@@ -18,16 +18,6 @@ This will:
   * Create a new, clean git repository with a single initial commit of your new
     files.
 
-## Make tasks
-There are some commands set up in a Makefile to run various code quality
-checks:
-~~~
-make secure    # run bundle audit to check for known vulnerabilities
-make quality   # run rubycritic and simplecov
-make fast      # run fasterer
-make all       # all of the above
-~~~
-
 ## License
 
 This code is available as open source under the terms of the [MIT License](http://opensource.org/licenses/MIT).
